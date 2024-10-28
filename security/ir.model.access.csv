@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_filmotecahugo_pelicula,filmotecahugo.pelicula,model_filmotecahugo_pelicula,base.group_user,1,1,1,1
+access_filmotecahugo_genero,filmotecahugo.genero,model_filmotecahugo_genero,base.group_user,1,1,1,1
