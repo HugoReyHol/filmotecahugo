@@ -13,6 +13,10 @@ class pelicula(models.Model):
     start_date = fields.Datetime(string="Fecha comienzo")
     end_date = fields.Datetime(string="Fecha final")
     is_spanish = fields.Boolean(string="Es española")
+    image = fields.Image(String="Imagen")
+    language = fields.Selection(selection=[("Es", "Español"), ("In", "Ingles"), ("De", "Aleman"), ("Fr", "Frances")], string="Idioma", default="Es")
+    opinion = fields.Selection(selection=[("0", "mala"), ("1", "regular"), ("2", "buena")], string="Opinion", default="1")
+    color = fields.Boolean(string="Color")
 
     # Relación entre tablas
     genero_id = fields.Many2one("filmotecahugo.genero", string="Género", required=True, ondelete="cascade")
