@@ -25,6 +25,7 @@
           <sheet>
             <group name="group_top">
               <group name="group_left">
+                <field name="code"/>
                 <field name="name"/>
                 <field name="description"/>
                 <field name="film_date"/>
