@@ -20,3 +20,7 @@ class pelicula(models.Model):
 
     # Relación entre tablas
     genero_id = fields.Many2one("filmotecahugo.genero", string="Género", required=True, ondelete="cascade")
+    tecnicas_id = fields.Many2many(comodel_name="filmotecahugo.tecnica",
+                                  relation="tecnicas_peliculas",
+                                  column1="tecnicas_ids",
+                                  column2="peliculas_ids")
