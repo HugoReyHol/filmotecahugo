@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import datetime
 
 from odoo import models, fields, api
 
@@ -38,3 +39,21 @@ class pelicula(models.Model):
 
     def toggle_color(self):
         self.color = not self.color
+
+    def f_create(self):
+        pelicula = {
+            "name": "Prueba ORM",
+            "color": True,
+            "genero_id": 1,
+            "start_date": str(datetime.date(2022, 8, 8))
+        }
+        print(pelicula)
+        self.env['filmotecahugo.pelicula'].create(pelicula)
+
+    def f_search(self):
+        p = self.env['filmotecahugo.pelicula'].search([('color', '=', True)], limit=1)
+        # p.write({'color': False})
+        p.color = False
+
+    def f_delete(self):
+        self.env['filmotecahugo.pelicula'].search([('name', '=', 'borrar')], limit=1).unlink()

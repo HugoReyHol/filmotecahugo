@@ -10,6 +10,9 @@
           <field name="name"/>
           <field name="film_date"/>
           <field name="description"/>
+          <button name="f_create" type="object" string="Crear" class="oe_highlight"/>
+          <button name="f_search" type="object" string="Buscar/Editar" class="oe_highlight"/>
+          <button name="f_delete" type="object" string="Borrar" class="oe_highlight"/>
         </tree>
       </field>
     </record>
