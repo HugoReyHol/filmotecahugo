@@ -35,3 +35,6 @@ class pelicula(models.Model):
                 pelicula.code = "FILM_" + str(pelicula.id)
             else:
                 pelicula.code = str(pelicula.genero_id.name).upper() + "_" + str(pelicula.id)
+
+    def toggle_color(self):
+        self.color = not self.color

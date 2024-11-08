@@ -23,6 +23,10 @@
       <field name="arch" type="xml">
         <form string="formulario_pelicula" >
           <sheet>
+            <div class="oe_button_box" name="button_box">
+              <button name="toggle_color" type="object" class="oe_stat_button" string="Pelicula color"
+                      icon="fa-paint-brush"/>
+            </div>
             <group name="group_top">
               <group name="group_left">
                 <field name="code"/>
@@ -80,6 +84,31 @@
       </field>
     </record>
 
+
+    <!-- Vista search -->
+
+    <record model="ir.ui.view" id="vista_filmotecahugo_pelicula_search">
+     <field name="name">vista_filmotecahugo_pelicula_search</field>
+     <field name="model">filmotecahugo.pelicula</field>
+     <field name="arch" type="xml">
+       <search string="Filtrar películas">
+         <field name="name"/>
+         <field name="is_spanish"/>
+         <field name="film_date"/>
+         <field name="color"/>
+         <group expand="0" string="Group By">
+           <filter name="groupby_is_spanish" string="Idioma" domain="[('is_spanish', '=', 'True')]"
+             context="{'group_by':'is_spanish'}"
+             help="Agrupar por idioma"/>
+           <filter name="groupby_film_date" string="Fecha"
+             context="{'group_by':'film_date'}"
+             help="Agrupar por fecha"/>
+         </group>
+         <filter name="filter_by_color" string="Color" domain="[('color','=','True')]"
+           help="Películas en color"/>
+       </search>
+     </field>
+    </record>
 
     <!-- Plantilla action -->
 
